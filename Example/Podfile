@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AppmazoUIKit_Example' do
+  pod 'AppmazoUIKit', :path => '../'
+
+  target 'AppmazoUIKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

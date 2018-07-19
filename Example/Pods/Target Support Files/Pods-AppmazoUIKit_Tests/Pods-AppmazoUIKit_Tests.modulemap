@@ -1,0 +1,6 @@
+framework module Pods_AppmazoUIKit_Tests {
+  umbrella header "Pods-AppmazoUIKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

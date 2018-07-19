@@ -1,0 +1,23 @@
+PODS:
+  - AppmazoFoundation (1.0.0)
+  - AppmazoUIKit (1.0.0):
+    - AppmazoFoundation (~> 1.0.0)
+
+DEPENDENCIES:
+  - AppmazoUIKit (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AppmazoFoundation
+
+EXTERNAL SOURCES:
+  AppmazoUIKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppmazoFoundation: 0921a5ba7f976b9ea0bd1a9af13151c739acf266
+  AppmazoUIKit: 8c1a4bcf72a1b76a997cfe47bfd6ce694edf626f
+
+PODFILE CHECKSUM: 4e3030e3d1dc015c279a6c4ffda405990eb12e8e
+
+COCOAPODS: 1.5.3
