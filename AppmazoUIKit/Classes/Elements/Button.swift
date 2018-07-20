@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Button: UIButton {
+open class Button: UIButton {
     public enum Style {
         case normal
         case filled
@@ -63,7 +63,7 @@ public class Button: UIButton {
     
     // MARK: - UIButton
     
-    public override var isHighlighted: Bool {
+    open override var isHighlighted: Bool {
         willSet {
             if self.isHighlighted != newValue {
                 self.transform = newValue ? CGAffineTransform(scaleX: 0.95, y: 0.95) : CGAffineTransform(scaleX: 1.0, y: 1.0)
