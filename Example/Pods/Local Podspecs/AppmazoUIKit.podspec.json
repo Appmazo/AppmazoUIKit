@@ -1,6 +1,6 @@
 {
   "name": "AppmazoUIKit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "summary": "Collection of UI Elements and tools.",
   "swift_version": "4.1",
   "description": "AppmazoUIKit is a collection of useful and simple UI Elements and tools to make your app breezy.",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/Appmazo/AppmazoUIKit.git",
-    "tag": "1.0.0"
+    "tag": "1.0.2"
   },
   "social_media_url": "https://twitter.com/appmazo",
   "platforms": {
@@ -23,7 +23,7 @@
   "source_files": "AppmazoUIKit/Classes/**/*.*",
   "dependencies": {
     "AppmazoFoundation": [
-      "~> 1.0.0"
+      "~> 1.0.1"
     ]
   }
 }
