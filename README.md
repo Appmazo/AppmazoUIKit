@@ -27,3 +27,8 @@ Appmazo LLC, jhickman@appmazo.com
 ## License
 
 AppmazoUIKit is available under the MIT license. See the LICENSE file for more info.
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/Appmazo/AppmazoUIKit/badge.svg?style=beer-square)](https://beerpay.io/Appmazo/AppmazoUIKit)  [![Beerpay](https://beerpay.io/Appmazo/AppmazoUIKit/make-wish.svg?style=flat-square)](https://beerpay.io/Appmazo/AppmazoUIKit?focus=wish)
