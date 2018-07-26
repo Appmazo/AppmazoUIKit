@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'AppmazoUIKit'
-    s.version          = '1.0.5'
+    s.version          = '1.0.6'
     s.summary          = 'Collection of UI Elements and tools.'
     s.swift_version    = '4.1'
     
