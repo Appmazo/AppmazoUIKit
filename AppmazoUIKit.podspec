@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'AppmazoUIKit'
-    s.version          = '1.0.4'
+    s.version          = '1.0.5'
     s.summary          = 'Collection of UI Elements and tools.'
     s.swift_version    = '4.1'
     
@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
     
     s.source_files = 'AppmazoUIKit/Classes/**/*.*'
-    #s.resources = 'AppmazoUIKit/Assets/**/*.*'
-    
+    s.resources = 'AppmazoUIKit/Assets/**/*.*'
+
     # s.public_header_files = 'Pod/Classes/**/*.h'
     # s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'AppmazoFoundation', '~> 1.0.1'
