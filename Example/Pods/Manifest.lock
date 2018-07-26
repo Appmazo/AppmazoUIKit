@@ -1,9 +1,10 @@
 PODS:
   - AppmazoFoundation (1.0.1)
-  - AppmazoUIKit (1.0.2):
+  - AppmazoUIKit (1.0.3):
     - AppmazoFoundation (~> 1.0.1)
 
 DEPENDENCIES:
+  - AppmazoFoundation
   - AppmazoUIKit (from `../`)
 
 SPEC REPOS:
@@ -16,8 +17,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppmazoFoundation: 2b66a952d7a3a00ea77358ebc7171a8355002ecf
-  AppmazoUIKit: e5855ffbac21313f8a198c634ed1a712ece0f275
+  AppmazoUIKit: 1b36fa4c97ddf09eb9b1f776c3499ae0087d786a
 
-PODFILE CHECKSUM: 1690b14d6b8f0a0352eeafdb78d65b17e6fda7ce
+PODFILE CHECKSUM: b3dfdd3163e66d243b7c7fb3d596d06dca8ff661
 
 COCOAPODS: 1.5.3

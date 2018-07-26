@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'AppmazoUIKit_Example' do
   pod 'AppmazoUIKit', :path => '../'
-# pod 'AppmazoFoundation', :path => '../../AppmazoFoundation'
+  pod 'AppmazoFoundation'
 
   target 'AppmazoUIKit_Tests' do
     inherit! :search_paths
