@@ -13,11 +13,11 @@ public protocol Storyboardable: class {
 }
 
 public extension Storyboardable where Self: UIViewController {
-    public static var storyboardName: String {
+    static var storyboardName: String {
         return String(describing: self)
     }
     
-    public static func viewControllerFromStoryboard(name: String = storyboardName) -> Self {
+    static func viewControllerFromStoryboard(name: String = storyboardName) -> Self {
         let storyboard = UIStoryboard(name: name, bundle: Bundle(for: self))
         
         guard let vc = storyboard.instantiateInitialViewController() as? Self else {
@@ -27,6 +27,3 @@ public extension Storyboardable where Self: UIViewController {
         return vc
     }
 }
-
-extension UITableViewCell: ReuseIdentifiable { }
-extension UICollectionViewCell: ReuseIdentifiable { }

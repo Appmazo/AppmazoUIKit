@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
     s.name             = 'AppmazoUIKit'
-    s.version          = '1.0.7'
+    s.version          = '1.0.8'
     s.summary          = 'Collection of UI Elements and tools.'
-    s.swift_version    = '4.1'
+    s.swift_version    = '5.0'
     
     # This description is used to generate tags and improve search results.
     #   * Think: What does it do? Why did you write it? What is the focus?

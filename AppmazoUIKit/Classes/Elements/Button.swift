@@ -15,7 +15,11 @@ open class Button: UIButton {
         case hollow
     }
     
-    public var style: Button.Style
+    public var style: Button.Style {
+        didSet {
+            update()
+        }
+    }
     
     public var cornerRadius: CGFloat = 0.0 {
         didSet {
@@ -85,7 +89,7 @@ open class Button: UIButton {
             backgroundColor = UIColor.clear
             layer.borderWidth = 1.0
             layer.borderColor = color.cgColor
-            setTitleColor(titleColor ?? color, for: .normal)
+            setTitleColor(color, for: .normal)
         }
     }
 }

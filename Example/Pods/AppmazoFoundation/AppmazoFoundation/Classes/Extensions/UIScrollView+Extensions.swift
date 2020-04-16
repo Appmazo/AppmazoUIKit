@@ -13,7 +13,7 @@ public extension UIScrollView {
         static var keyboardObserver = "keyboardObserver"
     }
     
-    public class KeyboardObserver: NSObject {
+    class KeyboardObserver: NSObject {
         static var keyboardFrame = CGRect.zero
         weak var scrollView: UIScrollView?
         var originalContentInset: CGFloat = 0.0
@@ -28,12 +28,12 @@ public extension UIScrollView {
             super.init()
 
             originalContentInset = scrollView.contentInset.bottom
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         }
         
         @objc func keyboardWillShow(_ notification: Notification) {
-            guard let keyboardData: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue, let scrollView = scrollView else { return }
+            guard let keyboardData: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue, let scrollView = scrollView else { return }
             KeyboardObserver.keyboardFrame = keyboardData.cgRectValue
             scrollView.adjustBottomInset(forKeyboardFrame: keyboardData.cgRectValue)
         }
@@ -48,7 +48,7 @@ public extension UIScrollView {
     /**
      Automatically changes the scroll view's content size to accommodate the keyboard.
      */
-    public var automaticallytAdjustsInsetsForKeyboard: Bool {
+    var automaticallytAdjustsInsetsForKeyboard: Bool {
         get {
             return !(keyboardObserver == nil)
         }
@@ -65,7 +65,7 @@ public extension UIScrollView {
     /**
      Manually changes the scroll view's content size to accommodate the keyboard.
      */
-    public func adjustInsetsForKeyboard() {
+    func adjustInsetsForKeyboard() {
         adjustBottomInset(forKeyboardFrame: KeyboardObserver.keyboardFrame)
     }
     
