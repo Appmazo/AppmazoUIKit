@@ -17,7 +17,7 @@ public extension UIImage {
 
      - returns: The scaled image.
      */
-    public class func scaledImage(_ image:UIImage, withSize size:CGSize) -> UIImage {
+    class func scaledImage(_ image:UIImage, withSize size:CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0);
         image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: size.width, height: size.height)))
         

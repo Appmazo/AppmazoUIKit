@@ -12,7 +12,7 @@ public extension UIViewController {
         The currently visible and top most view controller.
      -returns: UIViewController
      */
-    public func topMostViewController() -> UIViewController {
+    func topMostViewController() -> UIViewController {
         if let presented = self.presentedViewController {
             return presented.topMostViewController()
         }

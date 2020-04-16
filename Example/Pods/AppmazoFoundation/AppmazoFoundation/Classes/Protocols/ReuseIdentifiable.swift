@@ -13,13 +13,13 @@ public protocol ReuseIdentifiable: class {
 }
 
 public extension ReuseIdentifiable where Self: UITableViewCell {
-    public static var reuseIdentifier: String {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
 public extension ReuseIdentifiable where Self: UICollectionViewCell {
-    public static var reuseIdentifier: String {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
 }

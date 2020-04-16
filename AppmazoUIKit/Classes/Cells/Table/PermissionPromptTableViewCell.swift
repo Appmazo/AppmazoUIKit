@@ -21,9 +21,7 @@ public class PermissionPromptTableViewCell: UITableViewCell {
         case faceID
         case touchID
     }
-    
-    public static let reuseIdentifier = "PermissionPromptTableViewCellReuseIdentifier"
-   
+       
     public weak var delegate: PermissionPromptTableViewCellDelegate?
 
     private var buttonWidthConstraint: NSLayoutConstraint?
@@ -48,13 +46,17 @@ public class PermissionPromptTableViewCell: UITableViewCell {
     
     public var enabledColor: UIColor = UIColor(red: 3.0/255.0, green: 180.0/255.0, blue: 7.0/255.0, alpha: 1.0) {
         didSet {
-            button.color = enabledColor
+            if enabled {
+                button.color = enabledColor
+            }
         }
     }
     
     public var disabledColor: UIColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0) {
         didSet {
-            button.color = disabledColor
+            if !enabled {
+                button.color = disabledColor
+            }
         }
     }
     
@@ -64,25 +66,25 @@ public class PermissionPromptTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectionStyle = .none
+        selectionStyle = .none
         
         iconImageView = UIImageView()
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = UIColor(red: 96.0/255.0, green: 96.0/255.0, blue: 96.0/255.0, alpha: 1.0)
-        self.contentView.addSubview(iconImageView)
+        contentView.addSubview(iconImageView)
         
         titleLabel = UILabel()
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        self.contentView.addSubview(titleLabel)
+        contentView.addSubview(titleLabel)
         
         detailsLabel = UILabel()
         detailsLabel.font = UIFont.systemFont(ofSize: 14.0)
         detailsLabel.numberOfLines = 0
-        self.contentView.addSubview(detailsLabel)
+        contentView.addSubview(detailsLabel)
         
         button = Button(style: .filled)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
@@ -93,7 +95,7 @@ public class PermissionPromptTableViewCell: UITableViewCell {
         button.setContentCompressionResistancePriority(.required, for: .horizontal)
         button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         button.sizeToFit()
-        self.contentView.addSubview(button)
+        contentView.addSubview(button)
         
         let views: [String : UIView] = [ "iconImageView" : iconImageView,
                                          "titleLabel" : titleLabel,
@@ -111,8 +113,7 @@ public class PermissionPromptTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[button(30)]-[detailsLabel]", options: [], metrics: nil, views: views))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[detailsLabel]-|", options: [], metrics: nil, views: views))
         
-//        buttonWidthConstraint = NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 80.0)
-//        buttonWidthConstraint?.isActive = true
+        enabled = true
     }
     
     // MARK: - PDPermissionPromptTableViewCell
@@ -120,7 +121,7 @@ public class PermissionPromptTableViewCell: UITableViewCell {
     private func resizeButton() {
         guard let text = button.title(for: button.state), let font = button.titleLabel?.font else { return }
         
-        let size = text.size(withAttributes: [NSAttributedStringKey.font: font])
+        let size = text.size(withAttributes: [NSAttributedString.Key.font: font])
         buttonWidthConstraint?.constant = size.width + 5.0 * 2
         updateConstraints()
         layoutIfNeeded()

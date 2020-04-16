@@ -13,7 +13,7 @@ public extension String {
      
      - returns: A camel cased version of the string.
      */
-    public func camelCased() -> String {
+    func camelCased() -> String {
         var camelCasedString = ""
         let components = self.components(separatedBy: CharacterSet.whitespacesAndNewlines)
         for (index, string) in components.enumerated() {
@@ -32,7 +32,7 @@ public extension String {
      
      - returns: A randomly generated string.
      */
-    public static func randomString(length: Int) -> String {
+    static func randomString(length: Int) -> String {
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
         

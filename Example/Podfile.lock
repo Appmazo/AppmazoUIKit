@@ -1,6 +1,6 @@
 PODS:
-  - AppmazoFoundation (1.0.1)
-  - AppmazoUIKit (1.0.3):
+  - AppmazoFoundation (1.0.4)
+  - AppmazoUIKit (1.0.8):
     - AppmazoFoundation (~> 1.0.1)
 
 DEPENDENCIES:
@@ -16,9 +16,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppmazoFoundation: 2b66a952d7a3a00ea77358ebc7171a8355002ecf
-  AppmazoUIKit: 1b36fa4c97ddf09eb9b1f776c3499ae0087d786a
+  AppmazoFoundation: 38b6af15b8c3bc00e5ed3c27fb2c1e644d0da104
+  AppmazoUIKit: 188b37a63e9aa464bbde7018238baa41af913e4a
 
 PODFILE CHECKSUM: b3dfdd3163e66d243b7c7fb3d596d06dca8ff661
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2
